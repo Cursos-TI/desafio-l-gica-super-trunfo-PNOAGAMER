@@ -7,7 +7,7 @@
 
 int main() {
     /*Definição das variáveis*/ /*TODO: ajustar os tipos de variáveis para eliminar os problemas.*/
-    int Pturisticos1, Pturisticos2, popv;
+    int Pturisticos1, Pturisticos2;
     double area1, area2, pib1, pib2;
     char nome1[80], nome2[80], estado1[40], estado2[40], codigo1[40], codigo2[40];
     unsigned long int populacao1, populacao2;
@@ -52,7 +52,7 @@ int main() {
     scanf("%lf", &pib1);
     getchar();
 
-    print("Agora insira o número de pontos turísticos da primeira cidade:\n");
+    printf("Agora insira o número de pontos turísticos da primeira cidade:\n");
     scanf("%d", &Pturisticos1);
     getchar();
 
@@ -84,51 +84,13 @@ int main() {
     scanf("%lf", &pib2);
     getchar();
 
-    print("Agora insira o número de pontos turísticos da segunda cidade:\n");
+    printf("Agora insira o número de pontos turísticos da segunda cidade:\n");
     scanf("%d", &Pturisticos2);
     getchar();
 
-    printf("\n\n");
+    printf("\n");
 
-    /*Comparação das cartas e exibição dos resultados*/ //ptur
-
-    /*cidade 1*/
-
-    printf("Nota:\n1 = cidade 1 venceu.\n0 = cidade 2 venceu.\n\n")
-
-    if(populacao1 > populacao2){
-        printf("Cidade 1 tem maior população.\n");
-    }else{
-        printf("Cidade 2 tem maior população.\n");
-    }else if (populacao1 = populacao2){
-        printf("As duas cidades tem populações iguais.\n");
-    }
-
-    if(area1 > area2){
-        printf("Cidade 1 tem uma área maior.\n");
-    }else{
-        printf("Cidade 2 tem uma área maior.\n");
-    }else if (area1 = area2){
-        printf("As duas cidades tem areas iguais.\n");
-    }
-
-    if(pib1 > pib2){
-        printf("Cidade 1 tem maior PIB.\n");
-    }else{
-        printf("Cidade 2 tem maior PIB.\n");
-    }else if (pib1 = pib2){
-        printf("As duas cidades tem PIBs iguais\n");
-    }
-
-    if(Pturisticos1 > Pturisticos2){
-        printf("Cidade 1 tem mais Pontos Turísticos.\n");
-    }else{
-        printf("Cidade 2 tem mais Pontos Turísticos.\n");
-    }else if(Pturisticos1 = Pturisticos2){
-        printf("As duas cidades tem a mesma quabntidade de pontos turísticos.\n");
-    }
-
-    // Comparação de Cartas:
+        // Comparação de Cartas:
     // Desenvolva a lógica de comparação entre duas cartas.
     // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
 
@@ -145,6 +107,42 @@ int main() {
 
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+
+    /*Comparação das cartas e exibição dos resultados*/ //ptur
+
+    /*cidade 1*/
+
+    if(populacao1 > populacao2){
+        printf("Cidade 1 tem maior população.\n");
+    }else if (populacao1 < populacao2){
+        printf("Cidade 2 tem maior população.\n");
+    }else{
+        printf("As duas cidades tem populações iguais.\n");
+    }
+
+    if(area1 > area2){
+        printf("Cidade 1 tem uma área maior.\n");
+    }else if (area1 < area2){
+        printf("Cidade 2 tem uma área maior.\n");
+    }else{
+        printf("As duas cidades tem áreas iguais.\n");
+    }
+
+    if(pib1 > pib2){
+        printf("Cidade 1 tem maior PIB.\n");
+    }else if (pib1 < pib2){
+        printf("Cidade 2 tem maior PIB.\n");
+    }else{
+        printf("As duas cidades tem PIBs iguais\n");
+    }
+
+    if(Pturisticos1 > Pturisticos2){
+        printf("Cidade 1 tem mais Pontos Turísticos.\n");
+    }else if(Pturisticos1 < Pturisticos2){
+        printf("Cidade 2 tem mais Pontos Turísticos.\n");
+    }else{
+        printf("As duas cidades tem a mesma quantidade de pontos turísticos.\n\n");
+    }
 
     return 0;
 }
