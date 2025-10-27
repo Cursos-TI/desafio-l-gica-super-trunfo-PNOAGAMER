@@ -125,7 +125,7 @@ int main() {
     }else if (populacao1 < populacao2){
         printf(" %s: %lu.\n\n %s: %lu.\n\n Cidade 2 é a vencedora.\n\n", nome1, populacao1, nome2, populacao2);
     }else{
-        printf("As duas cidades tem populações iguais.\n\n %lu.\n\n", populacao1);
+        printf("EMPATE.\n\n %lu.\n\n", populacao1);
     }
     break;
     case 2:
@@ -134,7 +134,7 @@ int main() {
     }else if (area1 < area2){
         printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora.\n\n", nome1, area1, nome2, area2);
     }else{
-        printf("As duas cidades tem áreas iguais.\n\n %f.\n\n", area1);
+        printf("EMPATE.\n\n %f.\n\n", area1);
     }
     break;
 
@@ -144,7 +144,7 @@ int main() {
     }else if (pib1 < pib2){
         printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora.\n\n", nome1, pib1, nome2, pib2);
     }else{
-        printf("As duas cidades tem PIBs iguais.\n\n %f.\n\n", pib1);
+        printf("EMPATE.\n\n %f.\n\n", pib1);
     }
     break;
 
@@ -154,7 +154,7 @@ int main() {
     }else if(Pturisticos1 < Pturisticos2){
         printf(" %s: %d.\n\n %s: %d.\n\n Cidade 2 é a vencedora.\n\n", nome1, Pturisticos1, nome2, Pturisticos2);
     }else{
-        printf("As duas cidades tem a mesma quantidade de pontos turísticos.\n\n %d.\n\n", Pturisticos1);
+        printf("EMPATE.\n\n %d.\n\n", Pturisticos1);
     }
     break;
 
@@ -164,8 +164,13 @@ int main() {
     }else if(Dpopulacional1 > Dpopulacional2){
         printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora", nome1, Dpopulacional1, nome2, Dpopulacional2);
     }else {
-        printf("As duas cidades tem a mesma Densidade Populacional.\n\n %f.\n\n", Dpopulacional1);
+        printf("EMPATE.\n\n %f.\n\n", Dpopulacional1);
     }
+    break:
+
+    default:
+    printf("Entrada inválida.");
+    break;
 }
     
 
