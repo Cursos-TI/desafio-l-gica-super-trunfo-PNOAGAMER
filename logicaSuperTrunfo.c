@@ -7,7 +7,7 @@
 
 int main() {
     /*Definição das variáveis*/ /*TODO: ajustar os tipos de variáveis para eliminar os problemas.*/
-    int Pturisticos1, Pturisticos2, opcao;
+    int Pturisticos1, Pturisticos2, opcao1, opcao2, calculoDpop, vencedora;
     double area1, area2, pib1, pib2, Dpopulacional1, Dpopulacional2;
     char nome1[80], nome2[80], estado1[40], estado2[40], codigo1[40], codigo2[40];
     unsigned long int populacao1, populacao2;
@@ -113,65 +113,99 @@ int main() {
     // Exemplo:
     // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
-    printf("Agora escola o critério de comparação:\n\n1 - População.\n2 - Área.\n3 - PIB.\n4 - Pontos Turisticos.\n5 - Densidade Populacional.\nInsira a sua opção: ");
-    scanf("%d", &opcao);
+    printf("Agora escola o critério de comparação das cartas\nEscolha o atributo da primeira cidade:\n\n1 - População.\n2 - Área.\n3 - PIB.\n4 - Pontos Turisticos.\n5 - Densidade Populacional.\nInsira a sua opção: ");
+    scanf("%d", &opcao1);
 
     printf("\n"); /*Para melhorar a visibilidade*/
+    switch (opcao1){
+        case 1:
+        opcao1 = 1;
+        break;
 
-    switch (opcao){
-    case 1:
-    if(populacao1 > populacao2){
-        printf(" %s: %lu.\n\n %s: %lu.\n\n Cidade 1 é a vencedora.\n\n", nome1, populacao1, nome2, populacao2);
-    }else if (populacao1 < populacao2){
-        printf(" %s: %lu.\n\n %s: %lu.\n\n Cidade 2 é a vencedora.\n\n", nome1, populacao1, nome2, populacao2);
+        case 2:
+        opcao1 = 2;
+        break;
+
+        case 3:
+        opcao1 = 3;
+        break;
+
+        case 4:
+        opcao1 = 4;
+        break;
+
+        case 5:
+        opcao1 = 5;
+        break;
+
+        default:
+        opcao1 = 0;
+        printf("Entrada inválida.\n\n");
+        break;
+    }
+    printf("Agora escolha o atributo da segunda cidade:\n\n1 - População.\n2 - Área.\n3 - PIB.\n4 - Pontos Turisticos.\n5 - Densidade Populacional.\nInsira a sua opção: ");
+    scanf("%d", &opcao2);
+    printf("\n");    /*para melhorar a visibilidade.*/
+
+    switch (opcao2){
+        case 1:
+        opcao2 = populacao2;
+        break;
+
+        case 2:
+        opcao2 = area2;
+        break;
+
+        case 3:
+        opcao2 = pib2;
+        break;
+
+        case 4:
+        opcao2 = Pturisticos2;
+        break;
+
+        case 5:
+        opcao2 = Dpopulacional2;
+        break;
+
+        default:
+        opcao2 = 0;
+        printf("Entrada inválida.\n\n");
+        break;
+    }
+
+    if(opcao1 = 5){
+        calculoDpop = 1;
+    }else if(opcao2 = 5){
+        calculoDpop = 1;
     }else{
-        printf("EMPATE.\n\n %lu.\n\n", populacao1);
+        calculoDpop = 0;
     }
-    break;
-    case 2:
-    if(area1 > area2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 1 é a vencedora.\n\n", nome1, area1, nome2, area2);
-    }else if (area1 < area2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora.\n\n", nome1, area1, nome2, area2);
+
+    if(opcao1 > opcao2){
+        vencedora = 1;
+    }else if(opcao1 < opcao2){
+        vencedora = 2;
     }else{
-        printf("EMPATE.\n\n %f.\n\n", area1);
+        vencedora = 0;
     }
-    break;
 
-    case 3:
-    if(pib1 > pib2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 1 é a vencedora.\n\n", nome1, pib1, nome2, pib2);
-    }else if (pib1 < pib2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora.\n\n", nome1, pib1, nome2, pib2);
+    if(vencedora != 0){
+        if(calculoDpop = 1){
+            if(vencedora = 1){
+                vencedora = 2;
+            }else{
+                vencedora = 1;
+            }
+        }
+        printf("A vencedora é a cidade %d!\n\n", vencedora);
     }else{
-        printf("EMPATE.\n\n %f.\n\n", pib1);
+        printf("Houve um empate!");
     }
-    break;
 
-    case 4:
-    if(Pturisticos1 > Pturisticos2){
-        printf(" %s: %d.\n\n %s: %d.\n\n Cidade 1 é a vencedora.\n\n", nome1, Pturisticos1, nome2, Pturisticos2);
-    }else if(Pturisticos1 < Pturisticos2){
-        printf(" %s: %d.\n\n %s: %d.\n\n Cidade 2 é a vencedora.\n\n", nome1, Pturisticos1, nome2, Pturisticos2);
-    }else{
-        printf("EMPATE.\n\n %d.\n\n", Pturisticos1);
-    }
-    break;
 
-    case 5:
-    if(Dpopulacional1 < Dpopulacional2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 1 é a vencedora", nome1, Dpopulacional1, nome2, Dpopulacional2);
-    }else if(Dpopulacional1 > Dpopulacional2){
-        printf(" %s: %f.\n\n %s: %f.\n\n Cidade 2 é a vencedora", nome1, Dpopulacional1, nome2, Dpopulacional2);
-    }else {
-        printf("EMPATE.\n\n %f.\n\n", Dpopulacional1);
-    }
-    break:
 
-    default:
-    printf("Entrada inválida.");
-    break;
-}
+
     
 
     return 0;
